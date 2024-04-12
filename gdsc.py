@@ -52,12 +52,8 @@ def KanbanBoard(board_num):
         global board_num
         if board_num <= len(todo):
             sorted_todo = sorted(todo[board_num - 1], key=lambda x: ('high', 'medium', 'low').index(x[1]))
-            '''sorted_prog = sorted(prog[board_num - 1], key=lambda x: ('high', 'medium', 'low').index(x[1]))
-            sorted_done = sorted(done[board_num - 1], key=lambda x: ('high', 'medium', 'low').index(x[1]))
             print("TO DO\tIN PROGRESS\tDONE")
-            print(sorted_todo, "\t", sorted_prog, "\t", sorted_done, "\n")'''
-            print("TO DO\tIN PROGRESS\tDONE")
-            print(sorted_todo,"\t",prog[board_num-1],"\t",done[board_num-1],"\n")
+            print(sorted_todo, "\t", prog[board_num - 1], "\t", done[board_num - 1], "\n")
         else:
             print("Invalid Board Number")
 
@@ -113,7 +109,7 @@ while True:
         prog.append([])
         done.append([])
     else:
-        c1 = input("Do you want to work on existing board?(y/n)").lower()
+        c1 = input("Enter 'y' to continue and 'n' to exit").lower()
         if c1 == 'y':
             board_num = int(input("Enter Board Number: "))
             if board_num > 0 and board_num <= len(todo):
